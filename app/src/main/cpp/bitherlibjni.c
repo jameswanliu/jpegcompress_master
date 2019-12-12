@@ -24,13 +24,13 @@
 #include <stdint.h>
 #include <time.h>
 
-extern "C" {
-#include "include/jpeglib.h"
-#include "include/cdjpeg.h"        /* Common decls for cjpeg/djpeg applications */
-#include "include/jversion.h"        /* for version message */
-#include "include/config.h"
+//extern "C" {
+#include "jpeglib.h"
+#include "cdjpeg.h"        /* Common decls for cjpeg/djpeg applications */
+#include "jversion.h"        /* for version message */
+#include "config.h"
 
-}
+//}
 
 
 #define LOG_TAG "jni"
@@ -207,7 +207,6 @@ jstring Java_com_xiaoqi_libjpegcompress_ImageUtils_compressBitmap(JNIEnv *env,
 
 
 void jstringTostring(JNIEnv *env, jstring jstr, char *output, int *de_len) {
-    *output = NULL;
     jclass clsstring = (*env)->FindClass(env, "java/lang/String");
     jstring strencode = (*env)->NewStringUTF(env, "utf-8");
     jmethodID mid = (*env)->GetMethodID(env, clsstring, "getBytes",

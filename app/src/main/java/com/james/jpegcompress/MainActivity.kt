@@ -1,5 +1,6 @@
 package com.james.jpegcompress
 
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,12 @@ class MainActivity : AppCompatActivity() {
      * which is packaged with this application.
      */
     external fun stringFromJNI(): String
+
+    external fun compressJpeg(
+        bit: Bitmap, w: Int, h: Int, quality: Int, fileNameBytes: Array<Byte>,
+        optimize: Boolean
+    ):Int
+
 
     companion object {
 
